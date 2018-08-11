@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/enemy-spawner.unity
+  isLoaded: 1
+  isActive: 1
