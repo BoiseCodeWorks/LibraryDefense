@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/player-setup.unity
+- path: Assets/Scenes/PlayerWithEnemy.unity
   isLoaded: 1
   isActive: 1

@@ -21,13 +21,19 @@ public class SpawnManager : MonoBehaviour {
     public List<Wave> Waves;
     public GameObject EnemyGoal;
 
-
+    UIManager ui;
     Wave currentWave;
     int currentWaveNumber = -1;
     List<Enemy> currentEnemies = new List<Enemy>();
 
-	// Update is called once per frame
-	void Update () {
+    private void Start()
+    {
+        ui = GetComponent<UIManager>();
+        ui.WaveText.text = "";
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Return))
         {
             var stillAlive = currentEnemies.Find(enemy => enemy != null);
@@ -38,10 +44,11 @@ public class SpawnManager : MonoBehaviour {
                 currentWaveNumber++;
             }else
             {
-                Debug.Log("YOU WIN!!!");
+                ui.WaveText.text = "YOU WIN!!!";
                 return;
             }
             currentWave = Waves[currentWaveNumber];
+            ui.WaveText.text = "Wave: " + (currentWaveNumber + 1);
             StartSpawn();
         }
 	}

@@ -64,8 +64,12 @@
     <Compile Include="Assets\App\AI\AIMotor.cs" />
     <Compile Include="Assets\App\AI\Enemy.cs" />
     <Compile Include="Assets\App\Camera\ThirdPersonCameraController.cs" />
+    <Compile Include="Assets\App\Items\AttackTrigger.cs" />
+    <Compile Include="Assets\App\Items\Destroyable.cs" />
     <Compile Include="Assets\App\Items\KillOnTouch.cs" />
     <Compile Include="Assets\App\Managers\SpawnManager.cs" />
+    <Compile Include="Assets\App\Managers\UIManager.cs" />
+    <Compile Include="Assets\App\Player\PlayerController.cs" />
     <Compile Include="Assets\App\Player\PlayerMotor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/jover/source/unity/LibraryDefense/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

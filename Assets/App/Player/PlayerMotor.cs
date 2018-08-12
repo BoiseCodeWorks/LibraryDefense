@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.App.Camera;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,24 @@ public class PlayerMotor : MonoBehaviour
     public float WalkSpeed = 5;
     public float RunSpeed = 10;
     public float JumpForce = 5;
-    public Camera CamTransform;
+    public ThirdPersonCameraController CamTransform;
+
+    Vector3 dir = Vector3.zero;
+
+    public float ForwardSpeed
+    {
+        get
+        {
+            return Mathf.Abs(Input.GetAxis("Vertical"));
+        }
+    }
+    public float HorizontalSpeed
+    {
+        get
+        {
+            return Mathf.Abs(Input.GetAxis("Horizontal"));
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -21,12 +39,11 @@ public class PlayerMotor : MonoBehaviour
     void Update()
     {
         GetPlayerInput();
-
     }
 
     void GetPlayerInput()
     {
-        var dir = Vector3.zero;
+        dir = Vector3.zero;
         dir.x = Input.GetAxis("Horizontal");
         dir.z = Input.GetAxis("Vertical");
         var walking = Input.GetKey(KeyCode.LeftShift);
@@ -47,9 +64,10 @@ public class PlayerMotor : MonoBehaviour
     {
         Vector3 dir = CamTransform.transform.TransformDirection(input);
         dir.Set(dir.x, 0, dir.z);
-        float yAngle = (CamTransform.transform.rotation.y / 180) * 100;
-        //Debug.Log(yAngle);
-        transform.localRotation = new Quaternion(0, yAngle, 0, 0);
+        //float yAngle = Mathf.Abs(CamTransform.transform.rotation.y / 180) * 100;
+        transform.localRotation = Quaternion.FromToRotation(transform.position, new Vector3(CamTransform.HAngle,0,0));
+
+
         return dir.normalized * input.magnitude;
     }
 }

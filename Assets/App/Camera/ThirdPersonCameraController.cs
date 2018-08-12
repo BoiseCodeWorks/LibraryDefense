@@ -32,6 +32,8 @@ namespace Assets.App.Camera
         [Tooltip("Press Escape to toggle in game")]
         public bool lockCursor = true;
 
+        public float HAngle { get { return angleH; } }
+
         private float angleH = 0;
         private float angleV = 0;
         private Transform cam;
