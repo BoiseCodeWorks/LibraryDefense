@@ -11,6 +11,13 @@ public class AIMotor : MonoBehaviour
     public float StartRunningDistance;
     public float StopRunningDistance = 10;
 
+    public float ActualSpeed
+    {
+        get
+        {
+            return agent.speed;
+        }
+    }
 
     NavMeshAgent agent;
 
@@ -27,17 +34,12 @@ public class AIMotor : MonoBehaviour
     {
         var remaingDistanceToGoal = Vector3.Distance(transform.position, EnemyGoal.transform.position);
 
-        if(remaingDistanceToGoal < StartRunningDistance)
+        if (remaingDistanceToGoal < StartRunningDistance)
         {
             agent.speed = RunSpeed;
         }
 
-        if(remaingDistanceToGoal < StopRunningDistance)
-        {
-            agent.speed = RunSpeed - 8;
-        }
-
-        if(remaingDistanceToGoal > StartRunningDistance)
+        if (remaingDistanceToGoal > StartRunningDistance)
         {
             agent.speed = BaseSpeed;
         }

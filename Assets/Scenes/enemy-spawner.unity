@@ -1042,9 +1042,16 @@ MonoBehaviour:
   - {fileID: 594962801}
   Waves:
   - Enemies:
-    - Prefab: {fileID: 114431677029772678, guid: 9169623eead96eb4f99b176304cb9a51,
+    - Prefab: {fileID: 114583777276258032, guid: 64db5ff2940bd89449657e997e53cb17,
         type: 2}
       Quantity: 4
+  - Enemies:
+    - Prefab: {fileID: 114431677029772678, guid: 9169623eead96eb4f99b176304cb9a51,
+        type: 2}
+      Quantity: 15
+    - Prefab: {fileID: 114755338852444384, guid: c74d3e81c5c91b94d9bc0ef5e1fb4b96,
+        type: 2}
+      Quantity: 3
   EnemyGoal: {fileID: 1813639440}
 --- !u!4 &1776021338
 Transform:

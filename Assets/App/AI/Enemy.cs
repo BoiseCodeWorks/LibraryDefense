@@ -7,14 +7,16 @@ public class Enemy : MonoBehaviour {
     public Transform SpawnLocation;
 
     AIMotor motor;
+    Animator anim;
 
 	// Use this for initialization
 	void Start () {
         motor = GetComponent<AIMotor>();
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        anim.SetFloat("Speed", motor.ActualSpeed);
 	}
 }

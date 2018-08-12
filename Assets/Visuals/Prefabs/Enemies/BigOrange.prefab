@@ -247,7 +247,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyGoal: {fileID: 0}
   BaseSpeed: 20
-  RunSpeed: 2
+  RunSpeed: 9
   StartRunningDistance: 40
   StopRunningDistance: 10
 --- !u!135 &135066501306455058
